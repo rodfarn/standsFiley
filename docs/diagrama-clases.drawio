@@ -1,0 +1,59 @@
+<mxfile host="app.diagrams.net" modified="2026-11-03T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="filey-classes" name="Diagrama de clases">
+    <mxGraphModel dx="1450" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="main" value="&lt;div style=&quot;font-weight:bold&quot;&gt;Main&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ main(args: String[]): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="50" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="consola" value="&lt;div style=&quot;font-weight:bold&quot;&gt;Consola&lt;/div&gt;&lt;hr&gt;&lt;div&gt;- entrada: Scanner&lt;/div&gt;&lt;div&gt;- sistema: SistemaFiley&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ iniciar(): void&lt;/div&gt;&lt;div&gt;- ejecutar(opcion: String): boolean&lt;/div&gt;&lt;div&gt;- mostrarMenu(): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="350" y="40" width="280" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="sistema" value="&lt;div style=&quot;font-weight:bold&quot;&gt;SistemaFiley&lt;/div&gt;&lt;hr&gt;&lt;div&gt;- configuracion: Configuracion&lt;/div&gt;&lt;div&gt;- stands: Map&lt;/div&gt;&lt;div&gt;- reservas: List&lt;/div&gt;&lt;div&gt;- notificaciones: ServicioNotificaciones&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ registrarStand(...): Stand&lt;/div&gt;&lt;div&gt;+ reservar(...): Reserva&lt;/div&gt;&lt;div&gt;+ registrarPago(...): void&lt;/div&gt;&lt;div&gt;+ revisarNotificaciones(...): List&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="750" y="50" width="320" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="config" value="&lt;div style=&quot;font-weight:bold&quot;&gt;Configuracion&lt;/div&gt;&lt;hr&gt;&lt;div&gt;- precioPorMetroCuadrado: BigDecimal&lt;/div&gt;&lt;div&gt;- diasVigenciaReserva: int&lt;/div&gt;&lt;div&gt;- diasMaximosLiquidacion: int&lt;/div&gt;&lt;div&gt;- diasProntoPago: int&lt;/div&gt;&lt;div&gt;- diasAnticipacionNotificacion: int&lt;/div&gt;&lt;div&gt;- porcentajeMinimoOcupado: BigDecimal&lt;/div&gt;&lt;div&gt;- porcentajeDescuentoProntoPago: BigDecimal&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ actualizar(...): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="40" width="360" height="300" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stand" value="&lt;div style=&quot;font-weight:bold&quot;&gt;Stand&lt;/div&gt;&lt;hr&gt;&lt;div&gt;- identificador: String&lt;/div&gt;&lt;div&gt;- ancho: BigDecimal&lt;/div&gt;&lt;div&gt;- largo: BigDecimal&lt;/div&gt;&lt;div&gt;- precio: BigDecimal&lt;/div&gt;&lt;div&gt;- estado: EstadoStand&lt;/div&gt;&lt;div&gt;- reserva: Reserva&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ metrosCuadrados(): BigDecimal&lt;/div&gt;&lt;div&gt;+ bloquear(): void&lt;/div&gt;&lt;div&gt;+ reservar(...): void&lt;/div&gt;&lt;div&gt;+ marcarOcupado(): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="750" y="390" width="320" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="estado" value="&lt;div style=&quot;font-weight:bold&quot;&gt;EstadoStand&lt;/div&gt;&lt;hr&gt;&lt;div&gt;DISPONIBLE&lt;/div&gt;&lt;div&gt;RESERVADO&lt;/div&gt;&lt;div&gt;OCUPADO&lt;/div&gt;&lt;div&gt;BLOQUEADO&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="390" width="240" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="reserva" value="&lt;div style=&quot;font-weight:bold&quot;&gt;Reserva&lt;/div&gt;&lt;hr&gt;&lt;div&gt;- stand: Stand&lt;/div&gt;&lt;div&gt;- editorial: Editorial&lt;/div&gt;&lt;div&gt;- fechaReserva: LocalDate&lt;/div&gt;&lt;div&gt;- fechaVencimiento: LocalDate&lt;/div&gt;&lt;div&gt;- fechaLimiteProntoPago: LocalDate&lt;/div&gt;&lt;div&gt;- fechaLimiteLiquidacion: LocalDate&lt;/div&gt;&lt;div&gt;- pagos: List&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ registrarPago(...): void&lt;/div&gt;&lt;div&gt;+ total(...): BigDecimal&lt;/div&gt;&lt;div&gt;+ saldo(...): BigDecimal&lt;/div&gt;&lt;div&gt;+ alcanzaPorcentajeMinimo(...): boolean&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="350" y="350" width="330" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="editorial" value="&lt;div style=&quot;font-weight:bold&quot;&gt;Editorial&lt;/div&gt;&lt;hr&gt;&lt;div&gt;- nombre: String&lt;/div&gt;&lt;div&gt;- contacto: String&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ getNombre(): String&lt;/div&gt;&lt;div&gt;+ getContacto(): String&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="390" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="pago" value="&lt;div style=&quot;font-weight:bold&quot;&gt;Pago&lt;/div&gt;&lt;hr&gt;&lt;div&gt;- importe: BigDecimal&lt;/div&gt;&lt;div&gt;- fecha: LocalDate&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ getImporte(): BigDecimal&lt;/div&gt;&lt;div&gt;+ getFecha(): LocalDate&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="570" width="240" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="servicio" value="&lt;div style=&quot;font-weight:bold&quot;&gt;ServicioNotificaciones&lt;/div&gt;&lt;hr&gt;&lt;div&gt;- eventos: Set&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ revisar(reservas, configuracion, fecha): List&lt;/div&gt;&lt;div&gt;- revisarFecha(...): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="750" y="730" width="320" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="notificacion" value="&lt;div style=&quot;font-weight:bold&quot;&gt;Notificacion&lt;/div&gt;&lt;hr&gt;&lt;div&gt;- clave: String&lt;/div&gt;&lt;div&gt;- mensaje: String&lt;/div&gt;&lt;div&gt;- fecha: LocalDate&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ getMensaje(): String&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="730" width="260" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" value="inicia" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#666666;" edge="1" parent="1" source="main" target="consola"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#666666;" edge="1" parent="1" source="consola" target="sistema"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" value="contiene" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=1;strokeColor=#6c8ebf;" edge="1" parent="1" source="sistema" target="config"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" value="administra 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=0;strokeColor=#6c8ebf;" edge="1" parent="1" source="sistema" target="stand"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" value="guarda 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=0;strokeColor=#6c8ebf;" edge="1" parent="1" source="sistema" target="reserva"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#666666;" edge="1" parent="1" source="sistema" target="servicio"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" value="tiene 0..1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=1;strokeColor=#d6b656;" edge="1" parent="1" source="stand" target="reserva"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" value="pertenece a 1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#d6b656;" edge="1" parent="1" source="reserva" target="editorial"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" value="registra 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=1;strokeColor=#d6b656;" edge="1" parent="1" source="reserva" target="pago"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" value="revisa reservas" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#666666;" edge="1" parent="1" source="servicio" target="reserva"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" value="crea 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#6c8ebf;" edge="1" parent="1" source="servicio" target="notificacion"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" value="usa estado" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#666666;" edge="1" parent="1" source="stand" target="estado"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
